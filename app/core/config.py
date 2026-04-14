@@ -40,6 +40,12 @@ class Settings(BaseSettings):
     alert_impact_threshold: float = 0.7
     alert_novelty_threshold: float = 0.6
 
+    # Email / SMTP
+    smtp_host: str = "smtp.gmail.com"
+    smtp_port: int = 587
+    smtp_user: str = ""
+    smtp_password: str = ""
+
     @property
     def rss_feed_list(self) -> list[str]:
         return [f.strip() for f in self.rss_feeds.split(",") if f.strip()]
